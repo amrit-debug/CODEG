@@ -1,0 +1,13 @@
+sample_id,Tissue,Type,disease
+SRR21619378,CA3 neurons,SAD,Alzheimer
+SRR21619379,CA3 neurons,SAD,Alzheimer
+SRR21619380,CA3 neurons,SAD,Alzheimer
+SRR21619381,CA3 neurons,SAD,Alzheimer
+SRR21619382,CA3 neurons,FAD,Alzheimer
+SRR21619383,CA3 neurons,FAD,Alzheimer
+SRR21619384,CA3 neurons,FAD,Alzheimer
+SRR21619385,CA3 neurons,FAD,Alzheimer
+SRR21619386,CA3 neurons,Ctrl,Control
+SRR21619387,CA3 neurons,Ctrl,Control
+SRR21619388,CA3 neurons,Ctrl,Control
+SRR21619389,CA3 neurons,Ctrl,Control
