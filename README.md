@@ -41,6 +41,12 @@ org.Hs.eg.db
 cluster
 limma
 
+Usage:
+script WGCNA_exp.R -i total_gene_counts1.csv -p trait.csv -r 36 -c 8 -s 8 -b 17000 -t 12
+
+
+
+
 Differential gene expression analysis, gene ontology enrichment analysis and gene set enrichment analysis
 
 Following are the inputs for DGE.R
@@ -68,3 +74,6 @@ conflicted
 tibble
 AnnotationDbi
 optparse
+
+Usage:
+Rscript DGE.R -i total_gene_counts_SAD.csv -p phenotype_SAD.csv -r 30
