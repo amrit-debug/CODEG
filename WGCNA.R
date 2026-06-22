@@ -216,7 +216,6 @@ head(module_eigengenes)
 # get number of genes for each module
 table(bwnet$colors)
 corMatrix <- cor(bwnet$MEs)
-setwd("/home/amrit/final_neurodegeneration_datasets/AD_NGS_data_new/CA3neurons/new/")
 #library(WGCNA)
 pMatrix <- corPvalueStudent(corMatrix, nrow(bwnet$MEs))
 moduleColors <- gsub("ME", "", colnames(bwnet$MEs))  # Remove "ME" prefix to get colors
