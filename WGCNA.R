@@ -13,7 +13,7 @@ option_list <- list(
   make_option(c("-r", "--min_read_count"), type="integer", default=30, help="minimum read counts to remove outliers"),
   make_option(c("-c", "--min_sample_count"), type="integer", default=2, help="minimum sample counts to remove outliers"),
   make_option(c("-b", "--maxblocksize"), type="integer", default=2000, help="set blocksize"),
-  make_option(c("-s", "--soft_threshold"), type="integer", default=8, help="soft_threshold_power"),
+  make_option(c("-s", "--soft_threshold"), type="integer", default=8, help="soft_threshold_power")
   make_option(c("-t", "--threads"), type="integer", default=1, help="Number of threads")
 )
 opt_parser <- OptionParser(option_list = option_list)
@@ -410,7 +410,6 @@ write.csv(corp_pval_SAD_vs_Ctrl, "corp_pval_SAD_vs_Ctrl.csv", row.names = TRUE)
 
 TOM = TOMsimilarityFromExpr(norm.counts_corrected, power=8)
 annot = read.csv(file = "ensemble_to_gene_ids_v113.csv")
-setwd("/home/amrit/final_neurodegeneration_datasets/AD_NGS_data_new/CA3neurons/new/cytoscape")
 module_FAD = c('green', 'blue', 'red')
 module_SAD = c('skyblue', 'royalblue', 'floralwhite', 'lightcyan')
 ens_mods = colnames(norm.counts_corrected)
@@ -428,6 +427,18 @@ cyt <- exportNetworkToCytoscape(modTOM,
                                 nodeNames = modens,
                                 altNodeNames = modGenes,
                                 nodeAttr = bwnet$colors[inModule])
-cyt
+inModule = is.finite(match(bwnet$colors, module_FAD))
+modens <- ens_mods[inModule]
+modGenes <- annot$gene_name[match(modens, annot$ensembl_id)]
+modTOM <- TOM[inModule, inModule]
+dimnames(modTOM) <- list(modens, modens)
+cyt <- exportNetworkToCytoscape(modTOM,
+                                edgeFile = paste("Cytoscape-edges15-FAD", paste(module_FAD, collapse = "-"), ".txt", sep=""),
+                                nodeFile = paste("Cytoscape-nodes15-FAD-", paste(module_FAD, collapse = "-"), ".txt", sep=""),
+                                weighted = TRUE,
+                                threshold = 0.01,
+                                nodeNames = modens,
+                                altNodeNames = modGenes,
+                                nodeAttr = bwnet$colors[inModule])
 
 
