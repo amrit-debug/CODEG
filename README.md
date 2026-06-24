@@ -178,6 +178,7 @@ Rscript WGCNA.R -i total_gene_counts_WGCNA.csv -p phenotype_WGCNA.csv -r 30 -c 5
 # DGE Command Usage
 ## For AD_CA3 and AD_hpNPCs
 Rscript DGE.R -i total_gene_counts_FAD_DGE.csv -p phenotype_FAD_DGE.csv -r 30
+##
 Rscript DGE.R -i total_gene_counts_SAD_DGE.csv -p phenotype_SAD_DGE.csv -r 30
 
 ## For PD and ALS (all tissue types)
