@@ -17,13 +17,8 @@ The workflow accepts a gene expression matrix and sample metadata (trait informa
 - Requirements
 - Installation
 - Input Files
-- Input File Preparation
-- Running Differential Gene Expression (DGE)
-- Running WGCNA
-- Output Files
-- Recommended Data Processing
-- Common Errors and Solutions
-- Example Workflow
+- WGCNA Command Usage
+- DGE Command Usage
 - References
 
 ---
